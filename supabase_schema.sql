@@ -1,4 +1,4 @@
--- ==============================================================================
+﻿-- ==============================================================================
 -- EFI STUDIOS PAROS - DIGITAL GUEST GUIDE
 -- Supabase Schema & Seed Data Script
 -- ==============================================================================
@@ -153,7 +153,7 @@ VALUES
    NULL, FALSE, TRUE, 1, NULL, NULL),
 
   ('item-room-2', 'room_guide', 'Ζεστό Νερό & Ηλιακός Θερμοσίφωνας', 'Hot Water & Solar Heating',
-   'Το κατάλυμα διαθέτει οικολογικό ηλιακό θερμοσίφωνα που παρέχει άφθονο ζεστό νερό καθ\' όλη τη διάρκεια της ημέρας.\nΣε ημέρες με συννεφιά, ο διακόπτης του θερμοσίφωνα βρίσκεται στον κεντρικό ηλεκτρικό πίνακα. Χρειάζονται μόνο 15-20 λεπτά για να ζεσταθεί το νερό. Παρακαλούμε απενεργοποιήστε τον μετά τη χρήση.',
+   'Το κατάλυμα διαθέτει οικολογικό ηλιακό θερμοσίφωνα που παρέχει άφθονο ζεστό νερό καθ'' όλη τη διάρκεια της ημέρας.\nΣε ημέρες με συννεφιά, ο διακόπτης του θερμοσίφωνα βρίσκεται στον κεντρικό ηλεκτρικό πίνακα. Χρειάζονται μόνο 15-20 λεπτά για να ζεσταθεί το νερό. Παρακαλούμε απενεργοποιήστε τον μετά τη χρήση.',
    'Our property uses solar water heating providing hot water throughout sunny days.\nOn cloudy days, you can activate the water heater switch inside your studio electrical panel. It heats up in 15-20 minutes. Please switch it off after use.',
    NULL, FALSE, TRUE, 2, NULL, NULL),
 
@@ -188,8 +188,8 @@ VALUES
    NULL, FALSE, TRUE, 5, 'Πίσω Αυλή', 'Back Courtyard'),
 
   ('item-facilities-6', 'facilities', 'Φαγητό', 'Dining & Takeaway',
-   'Μπορείτε να παραγγείλετε φαγητό σε πακέτο από το εστιατόριο της Άννας καθ\' όλη τη διάρκεια της ημέρας. Ακόμη μπορείτε να κάνετε ειδικές παραγγελίες εκτός μενού. Ισχύουν οι τιμές εστιατορίου.',
-   'You can order takeaway food from Anna\'s restaurant throughout the day. Special off-menu orders can also be requested. Regular restaurant prices apply.',
+   'Μπορείτε να παραγγείλετε φαγητό σε πακέτο από το εστιατόριο της Άννας καθ'' όλη τη διάρκεια της ημέρας. Ακόμη μπορείτε να κάνετε ειδικές παραγγελίες εκτός μενού. Ισχύουν οι τιμές εστιατορίου.',
+   'You can order takeaway food from Anna''s restaurant throughout the day. Special off-menu orders can also be requested. Regular restaurant prices apply.',
    NULL, FALSE, TRUE, 6, 'Εστιατόριο Άννα', 'Anna Restaurant'),
 
   ('item-facilities-7', 'facilities', 'Πάρκινγκ', 'Parking',
@@ -197,9 +197,9 @@ VALUES
    'The quiet street in front of the rooms offers ample free parking space.',
    NULL, FALSE, TRUE, 7, 'Δωρεάν Parking', 'Free Parking'),
 
-  ('item-facilities-8', 'facilities', 'Παιδική χαρά', 'Children\'s Playground',
+  ('item-facilities-8', 'facilities', 'Παιδική χαρά', 'Children''s Playground',
    'Παιδική χαρά θα βρείτε απέναντι από τα ενοικιαζόμενα δωμάτια, περιτριγυρισμένη από ψηλά δέντρα για σκιά – για δημιουργική και ξέγνοιαστη απασχόληση για τα παιδιά.',
-   'A children\'s playground is located directly opposite the rooms, shaded by tall trees – for creative and carefree playtime for kids.',
+   'A children''s playground is located directly opposite the rooms, shaded by tall trees – for creative and carefree playtime for kids.',
    NULL, FALSE, TRUE, 8, 'Για παιδιά', 'Family Friendly'),
 
   ('item-facilities-9', 'facilities', 'Internet', 'Internet',
