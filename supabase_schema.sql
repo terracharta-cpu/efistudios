@@ -294,3 +294,9 @@ ON CONFLICT (id) DO UPDATE SET
   key = EXCLUDED.key,
   value = EXCLUDED.value,
   updated_at = NOW();
+
+-- 12. GRANT API ACCESS TO ANON & AUTHENTICATED ROLES
+GRANT USAGE ON SCHEMA public TO anon, authenticated;
+GRANT ALL ON TABLE public.categories TO anon, authenticated;
+GRANT ALL ON TABLE public.guide_items TO anon, authenticated;
+GRANT ALL ON TABLE public.property_settings TO anon, authenticated;
