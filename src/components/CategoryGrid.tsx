@@ -107,9 +107,21 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ onSelectCategory }) 
         </button>
 
         {/* Horizontal Single-Row Scrollable Container: 2 cards visible on smartphone */}
+        {/* Minimalist faint right arrow hint for mobile */}
+        {activeIndex < sortedCategories.length - 1 && (
+          <button
+            type="button"
+            onClick={() => stepScroll('right')}
+            aria-label="Next"
+            className="md:hidden absolute right-0.5 top-1/2 -translate-y-1/2 z-20 p-1 text-[#24123a]/35 hover:text-[#24123a]/70 transition-colors"
+          >
+            <ChevronRight className="w-6 h-6 stroke-[1.75]" />
+          </button>
+        )}
+
         <div
           ref={scrollContainerRef}
-          className="flex flex-nowrap gap-3 sm:gap-4 overflow-x-auto pb-0 pt-0 px-1 snap-x snap-mandatory scroll-smooth no-scrollbar"
+          className="flex flex-nowrap gap-3 sm:gap-4 overflow-x-auto pb-4 pt-1 px-1.5 snap-x snap-mandatory scroll-smooth no-scrollbar"
           style={{ WebkitOverflowScrolling: 'touch' }}
         >
           {sortedCategories.map((category, index) => {
@@ -124,14 +136,15 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ onSelectCategory }) 
                 }}
                 type="button"
                 onClick={() => onSelectCategory(category)}
-                className={`group relative flex flex-col items-center justify-between p-4 sm:p-6 rounded-xl text-center snap-start shrink-0 transition-all duration-300 active:scale-[0.98] focus:outline-none overflow-hidden cursor-pointer
+                className={`group relative flex flex-col items-center justify-between px-2.5 py-4 sm:p-6 rounded-xl text-center snap-start shrink-0 transition-all duration-300 active:scale-[0.98] focus:outline-none overflow-hidden cursor-pointer
                   /* Width: Exactly 2 cards per view on smartphone */
                   w-[calc(50vw-22px)] sm:w-[220px] md:w-[240px] lg:w-[250px]
                   min-h-[235px] sm:min-h-[270px] md:min-h-[290px]
-                  /* Clean white card with slightly rounded corners (no glass bevel) */
+                  /* Clean white card with soft purple drop shadow */
                   bg-white hover:bg-[#faf6fb]
                   border border-[#e8dff0] hover:border-[#b0873e]
-                  shadow-sm hover:shadow-md
+                  shadow-[0_6px_20px_-4px_rgba(36,18,58,0.14),0_2px_8px_-2px_rgba(36,18,58,0.08)]
+                  hover:shadow-[0_10px_28px_-4px_rgba(36,18,58,0.22)]
                 `}
               >
                 {/* Background Image with ~22% opacity */}
@@ -153,9 +166,9 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ onSelectCategory }) 
                   />
                 </div>
 
-                {/* Large, prominent typography in dark purple and Pathos font, centered & wrapped */}
-                <div className="relative z-10 my-auto py-2 w-full px-1 flex items-center justify-center">
-                  <h3 className="font-pathos font-bold text-lg sm:text-xl md:text-2xl text-[#24123a] tracking-normal leading-snug text-center w-full break-words">
+                {/* Large, prominent typography in dark purple and Pathos font, centered without mid-word breaks */}
+                <div className="relative z-10 my-auto py-2 w-full px-0.5 flex items-center justify-center">
+                  <h3 className="font-pathos font-bold text-[15px] sm:text-xl md:text-2xl text-[#24123a] tracking-normal leading-snug text-center w-full">
                     {categoryTitle}
                   </h3>
                 </div>
