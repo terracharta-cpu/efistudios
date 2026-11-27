@@ -73,9 +73,9 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ onSelectCategory }) 
 
   return (
     <div className="w-full">
-      {/* 1. Guest Guide Subtitle: Simple, thin, minimal sans-serif font */}
+      {/* 1. Guest Guide Subtitle: Slightly larger, clean minimal sans-serif */}
       <div className="text-center mb-6">
-        <p className="text-[11px] sm:text-xs uppercase tracking-[0.28em] font-sans font-light text-[#24123a]/80">
+        <p className="text-sm sm:text-base uppercase tracking-[0.28em] font-sans font-normal text-[#24123a]/85">
           {language === 'el'
             ? 'Οδηγός Επισκέπτη'
             : 'Guest Guide'}
@@ -181,9 +181,9 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ onSelectCategory }) 
         </div>
       </div>
 
-      {/* Quick Jump Indicator Bar: 9 small rounded buttons side-by-side underneath */}
+      {/* Quick Jump Indicator Bar: 9 slightly larger rounded buttons side-by-side underneath */}
       <div className="w-full mt-6 flex flex-col items-center">
-        <div className="flex items-center justify-center gap-1.5 sm:gap-2 p-1.5 bg-white border border-[#e8dff0] rounded-xl shadow-xs max-w-full overflow-x-auto">
+        <div className="flex items-center justify-center gap-2 sm:gap-2.5 p-2 bg-white border border-[#e8dff0] rounded-xl shadow-xs max-w-full overflow-x-auto no-scrollbar">
           {sortedCategories.map((category, index) => {
             const isActive = activeIndex === index;
             const categoryTitle = language === 'el' ? category.name_el : category.name_en;
@@ -194,14 +194,14 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ onSelectCategory }) 
                 type="button"
                 onClick={() => scrollToCategory(index)}
                 title={categoryTitle}
-                className={`relative w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center transition-all duration-200 cursor-pointer focus:outline-none ${
+                className={`relative w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center transition-all duration-200 cursor-pointer focus:outline-none ${
                   isActive
                     ? 'bg-[#24123a] text-white shadow-xs scale-105'
                     : 'bg-[#faf6fb] hover:bg-[#f3eaf7] text-[#24123a]/70 hover:text-[#24123a] border border-[#e8dff0]'
                 }`}
                 aria-label={categoryTitle}
               >
-                <CategoryIcon name={category.icon} className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[1.6]" />
+                <CategoryIcon name={category.icon} className="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.6]" />
                 {isActive && (
                   <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-0.5 bg-[#dfc285]" />
                 )}

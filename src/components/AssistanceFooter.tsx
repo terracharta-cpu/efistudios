@@ -174,86 +174,74 @@ export const AssistanceFooter: React.FC<AssistanceFooterProps> = () => {
         {/* ============================================================== */}
         <div>
           <div className="text-center mb-7">
-            <span className="text-[10px] uppercase tracking-[0.25em] font-sans font-light text-[#997530] block mb-1">
-              ΣΤΟΙΧΕΙΑ ΕΠΙΚΟΙΝΩΝΙΑΣ · CONTACT DETAILS
+            <span className="text-[10px] uppercase tracking-[0.25em] font-sans font-light text-[#24123a]/70 block mb-1">
+              {language === 'el' ? 'ΣΤΟΙΧΕΙΑ ΕΠΙΚΟΙΝΩΝΙΑΣ' : 'CONTACT DETAILS'}
             </span>
             <h3 className="font-pathos font-bold text-2xl sm:text-3xl tracking-tight text-[#24123a] mb-1.5">
               {t.assistanceTitle}
             </h3>
-            <p className="text-xs sm:text-sm text-slate-600 font-sans font-light">
+            <p className="text-xs sm:text-sm text-[#24123a]/70 font-sans font-light">
               {t.assistanceSub}
             </p>
-            <div className="w-12 h-px bg-[#c5a059] mx-auto mt-2.5" />
+            <div className="w-12 h-px bg-[#24123a]/30 mx-auto mt-2.5" />
           </div>
 
-          {/* Contact Action Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          {/* Contact Action Cards Grid: 2 per row (except Location full width at bottom), uniform purple, whole card clickable */}
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-3.5">
             {/* 1. Phone (Landline: +30 22840 41015) */}
             <a
               href="tel:+302284041015"
-              className="flex items-center gap-4 p-4 rounded-xl bg-white hover:bg-[#faf6fb] border border-[#e8dff0] hover:border-[#b0873e] transition-all duration-200 group shadow-xs hover:shadow-sm"
+              className="flex items-center gap-2.5 sm:gap-3 p-3 sm:p-3.5 rounded-xl bg-white hover:bg-[#faf6fb] border border-[#e8dff0] hover:border-[#24123a] transition-all duration-200 group shadow-xs hover:shadow-sm"
             >
-              <div className="w-11 h-11 rounded-lg border border-[#e8dff0] group-hover:border-[#24123a] bg-[#faf6fb] group-hover:bg-[#24123a] text-[#24123a] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg border border-[#e8dff0] group-hover:border-[#24123a] bg-[#faf6fb] group-hover:bg-[#24123a] text-[#24123a] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
                 <Phone className="w-4 h-4 stroke-[1.7]" />
               </div>
               <div className="flex-1 min-w-0">
-                <span className="text-[10px] font-sans font-medium text-slate-400 uppercase tracking-wider block">
-                  {t.landlineLabel} (Phone)
+                <span className="text-[9px] font-sans font-medium text-[#24123a]/60 uppercase tracking-wider block truncate">
+                  {t.landlineLabel}
                 </span>
-                <span className="text-sm font-pathos font-bold text-[#24123a] truncate block">
+                <span className="text-[11px] sm:text-xs font-pathos font-bold text-[#24123a] truncate block">
                   +30 22840 41015
                 </span>
               </div>
-              <span className="text-[11px] font-pathos font-bold uppercase tracking-wider text-[#997530] group-hover:text-[#24123a] shrink-0">
-                {t.phoneCallAction} →
-              </span>
             </a>
 
             {/* 2. Mobiles (6942 422511, 6942 402355) */}
-            <div className="flex items-center gap-4 p-4 rounded-xl bg-white border border-[#e8dff0] hover:border-[#b0873e] transition-all duration-200 group shadow-xs hover:shadow-sm">
-              <div className="w-11 h-11 rounded-lg border border-[#e8dff0] group-hover:border-[#24123a] bg-[#faf6fb] group-hover:bg-[#24123a] text-[#24123a] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+            <a
+              href="tel:+306942422511"
+              className="flex items-center gap-2.5 sm:gap-3 p-3 sm:p-3.5 rounded-xl bg-white hover:bg-[#faf6fb] border border-[#e8dff0] hover:border-[#24123a] transition-all duration-200 group shadow-xs hover:shadow-sm"
+            >
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg border border-[#e8dff0] group-hover:border-[#24123a] bg-[#faf6fb] group-hover:bg-[#24123a] text-[#24123a] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
                 <Smartphone className="w-4 h-4 stroke-[1.7]" />
               </div>
               <div className="flex-1 min-w-0">
-                <span className="text-[10px] font-sans font-medium text-slate-400 uppercase tracking-wider block">
-                  {t.mobileLabel} (Mobile)
+                <span className="text-[9px] font-sans font-medium text-[#24123a]/60 uppercase tracking-wider block truncate">
+                  {t.mobileLabel}
                 </span>
-                <div className="flex flex-wrap items-center gap-x-2 text-xs font-pathos font-bold text-[#24123a]">
-                  <a href="tel:+306942422511" className="hover:text-[#b0873e] underline">
-                    6942 422511
-                  </a>
-                  <span>·</span>
-                  <a href="tel:+306942402355" className="hover:text-[#b0873e] underline">
-                    6942 402355
-                  </a>
-                </div>
+                <span className="text-[10px] sm:text-xs font-pathos font-bold text-[#24123a] block leading-tight">
+                  6942 422511 · 6942 402355
+                </span>
               </div>
-              <span className="text-[11px] font-pathos font-bold uppercase tracking-wider text-[#997530] shrink-0">
-                {t.phoneCallAction} →
-              </span>
-            </div>
+            </a>
 
             {/* 3. WhatsApp Direct Chat */}
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-4 rounded-xl bg-white hover:bg-[#faf6fb] border border-[#e8dff0] hover:border-emerald-600 transition-all duration-200 group shadow-xs hover:shadow-sm"
+              className="flex items-center gap-2.5 sm:gap-3 p-3 sm:p-3.5 rounded-xl bg-white hover:bg-[#faf6fb] border border-[#e8dff0] hover:border-[#24123a] transition-all duration-200 group shadow-xs hover:shadow-sm"
             >
-              <div className="w-11 h-11 rounded-lg border border-[#e8dff0] group-hover:border-emerald-600 bg-[#faf6fb] group-hover:bg-emerald-600 text-[#24123a] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg border border-[#e8dff0] group-hover:border-[#24123a] bg-[#faf6fb] group-hover:bg-[#24123a] text-[#24123a] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
                 <MessageCircle className="w-4 h-4 stroke-[1.7]" />
               </div>
               <div className="flex-1 min-w-0">
-                <span className="text-[10px] font-sans font-medium text-slate-400 uppercase tracking-wider block">
-                  {t.whatsappLabel}
+                <span className="text-[9px] font-sans font-medium text-[#24123a]/60 uppercase tracking-wider block truncate">
+                  WhatsApp
                 </span>
-                <span className="text-sm font-pathos font-bold text-[#24123a] truncate block">
+                <span className="text-[11px] sm:text-xs font-pathos font-bold text-[#24123a] truncate block">
                   +30 6942 422511
                 </span>
               </div>
-              <span className="text-[11px] font-pathos font-bold uppercase tracking-wider text-emerald-700 shrink-0">
-                {t.whatsappAction} →
-              </span>
             </a>
 
             {/* 4. Viber Direct Chat */}
@@ -261,43 +249,37 @@ export const AssistanceFooter: React.FC<AssistanceFooterProps> = () => {
               href={viberUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-4 rounded-xl bg-white hover:bg-[#faf6fb] border border-[#e8dff0] hover:border-purple-600 transition-all duration-200 group shadow-xs hover:shadow-sm"
+              className="flex items-center gap-2.5 sm:gap-3 p-3 sm:p-3.5 rounded-xl bg-white hover:bg-[#faf6fb] border border-[#e8dff0] hover:border-[#24123a] transition-all duration-200 group shadow-xs hover:shadow-sm"
             >
-              <div className="w-11 h-11 rounded-lg border border-[#e8dff0] group-hover:border-purple-600 bg-[#faf6fb] group-hover:bg-purple-600 text-[#24123a] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg border border-[#e8dff0] group-hover:border-[#24123a] bg-[#faf6fb] group-hover:bg-[#24123a] text-[#24123a] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
                 <MessageCircle className="w-4 h-4 stroke-[1.7]" />
               </div>
               <div className="flex-1 min-w-0">
-                <span className="text-[10px] font-sans font-medium text-slate-400 uppercase tracking-wider block">
-                  {t.viberLabel}
+                <span className="text-[9px] font-sans font-medium text-[#24123a]/60 uppercase tracking-wider block truncate">
+                  Viber
                 </span>
-                <span className="text-sm font-pathos font-bold text-[#24123a] truncate block">
+                <span className="text-[11px] sm:text-xs font-pathos font-bold text-[#24123a] truncate block">
                   +30 6942 422511
                 </span>
               </div>
-              <span className="text-[11px] font-pathos font-bold uppercase tracking-wider text-purple-700 shrink-0">
-                {t.viberAction} →
-              </span>
             </a>
 
             {/* 5. Direct Email (anna@efistudios.gr) */}
             <a
               href="mailto:anna@efistudios.gr?subject=Efi%20Studios%20Inquiry"
-              className="flex items-center gap-4 p-4 rounded-xl bg-white hover:bg-[#faf6fb] border border-[#e8dff0] hover:border-[#b0873e] transition-all duration-200 group shadow-xs hover:shadow-sm"
+              className="flex items-center gap-2.5 sm:gap-3 p-3 sm:p-3.5 rounded-xl bg-white hover:bg-[#faf6fb] border border-[#e8dff0] hover:border-[#24123a] transition-all duration-200 group shadow-xs hover:shadow-sm"
             >
-              <div className="w-11 h-11 rounded-lg border border-[#e8dff0] group-hover:border-[#24123a] bg-[#faf6fb] group-hover:bg-[#24123a] text-[#24123a] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg border border-[#e8dff0] group-hover:border-[#24123a] bg-[#faf6fb] group-hover:bg-[#24123a] text-[#24123a] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
                 <Mail className="w-4 h-4 stroke-[1.7]" />
               </div>
               <div className="flex-1 min-w-0">
-                <span className="text-[10px] font-sans font-medium text-slate-400 uppercase tracking-wider block">
-                  {t.emailLabel}
+                <span className="text-[9px] font-sans font-medium text-[#24123a]/60 uppercase tracking-wider block truncate">
+                  Email
                 </span>
-                <span className="text-sm font-pathos font-bold text-[#24123a] truncate block">
+                <span className="text-[10px] sm:text-xs font-pathos font-bold text-[#24123a] truncate block">
                   anna@efistudios.gr
                 </span>
               </div>
-              <span className="text-[11px] font-pathos font-bold uppercase tracking-wider text-[#997530] group-hover:text-[#24123a] shrink-0">
-                {t.emailAction} →
-              </span>
             </a>
 
             {/* 6. Official Website (www.efistudios.gr/el/) */}
@@ -305,47 +287,39 @@ export const AssistanceFooter: React.FC<AssistanceFooterProps> = () => {
               href={websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-4 rounded-xl bg-white hover:bg-[#faf6fb] border border-[#e8dff0] hover:border-[#b0873e] transition-all duration-200 group shadow-xs hover:shadow-sm"
+              className="flex items-center gap-2.5 sm:gap-3 p-3 sm:p-3.5 rounded-xl bg-white hover:bg-[#faf6fb] border border-[#e8dff0] hover:border-[#24123a] transition-all duration-200 group shadow-xs hover:shadow-sm"
             >
-              <div className="w-11 h-11 rounded-lg border border-[#e8dff0] group-hover:border-[#24123a] bg-[#faf6fb] group-hover:bg-[#24123a] text-[#24123a] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg border border-[#e8dff0] group-hover:border-[#24123a] bg-[#faf6fb] group-hover:bg-[#24123a] text-[#24123a] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
                 <Globe className="w-4 h-4 stroke-[1.7]" />
               </div>
               <div className="flex-1 min-w-0">
-                <span className="text-[10px] font-sans font-medium text-slate-400 uppercase tracking-wider block">
-                  {t.websiteLabel}
+                <span className="text-[9px] font-sans font-medium text-[#24123a]/60 uppercase tracking-wider block truncate">
+                  Website
                 </span>
-                <span className="text-sm font-pathos font-bold text-[#24123a] truncate block">
-                  www.efistudios.gr/el/
+                <span className="text-[10px] sm:text-xs font-pathos font-bold text-[#24123a] truncate block">
+                  efistudios.gr
                 </span>
               </div>
-              <span className="text-[11px] font-pathos font-bold uppercase tracking-wider text-[#997530] group-hover:text-[#24123a] shrink-0 flex items-center gap-1">
-                <span>{t.websiteAction}</span>
-                <ExternalLink className="w-3 h-3" />
-              </span>
             </a>
 
-            {/* 7. Google Maps Pin (Δρυός, Πάρος 84400) */}
+            {/* 7. Google Maps Pin (Full width across bottom) */}
             <a
               href="https://maps.google.com/?q=Efi+Studios+Drios+Paros+84400"
               target="_blank"
               rel="noopener noreferrer"
-              className="sm:col-span-2 flex items-center gap-4 p-4 rounded-xl bg-white hover:bg-[#faf6fb] border border-[#e8dff0] hover:border-[#b0873e] transition-all duration-200 group shadow-xs hover:shadow-sm"
+              className="col-span-2 flex items-center justify-center gap-3 p-3 sm:p-3.5 rounded-xl bg-white hover:bg-[#faf6fb] border border-[#e8dff0] hover:border-[#24123a] transition-all duration-200 group shadow-xs hover:shadow-sm"
             >
-              <div className="w-11 h-11 rounded-lg border border-[#e8dff0] group-hover:border-[#24123a] bg-[#faf6fb] group-hover:bg-[#24123a] text-[#24123a] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg border border-[#e8dff0] group-hover:border-[#24123a] bg-[#faf6fb] group-hover:bg-[#24123a] text-[#24123a] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
                 <MapPin className="w-4 h-4 stroke-[1.7]" />
               </div>
-              <div className="flex-1 min-w-0">
-                <span className="text-[10px] font-sans font-medium text-slate-400 uppercase tracking-wider block">
+              <div className="min-w-0 text-left">
+                <span className="text-[9px] font-sans font-medium text-[#24123a]/60 uppercase tracking-wider block">
                   {t.locationLabel}
                 </span>
-                <span className="text-sm font-pathos font-bold text-[#24123a] truncate block">
+                <span className="text-xs sm:text-sm font-pathos font-bold text-[#24123a] truncate block">
                   {language === 'el' ? 'Δρυός, Πάρος 84400' : 'Drios, Paros 84400'}
                 </span>
               </div>
-              <span className="text-[11px] font-pathos font-bold uppercase tracking-wider text-[#997530] group-hover:text-[#24123a] shrink-0 flex items-center gap-1">
-                <span>{t.locationAction}</span>
-                <ExternalLink className="w-3 h-3" />
-              </span>
             </a>
           </div>
         </div>
