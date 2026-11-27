@@ -111,11 +111,11 @@ END $$;
 -- 9. SEED DATA: CATEGORIES (9 CORE CATEGORIES)
 INSERT INTO categories (id, name_el, name_en, subtitle_el, subtitle_en, icon, sort_order, bg_image)
 VALUES
-  ('welcome', 'Καλωσόρισμα & Άφιξη', 'Welcome & Check-in', 'Οδηγίες άφιξης & καλωσορίσματος', 'Arrival instructions & welcome tips', 'Key', 1, '/images/categories/welcome.jpg'),
+  ('welcome', 'Άφιξη', 'Check-in', 'Οδηγίες άφιξης & καλωσορίσματος', 'Arrival instructions & welcome tips', 'Key', 1, '/images/categories/welcome.jpg'),
   ('wifi', 'Wi-Fi', 'Wi-Fi', 'Πρόσβαση στο Internet', 'Internet Access', 'Wifi', 2, '/images/categories/wifi.jpg'),
   ('room_guide', 'Οδηγός Δωματίου', 'Rooms Guide', 'A/C, ζεστό νερό & συσκευές', 'A/C, hot water & appliances', 'Bed', 3, '/images/categories/rooms.jpg'),
   ('facilities', 'Παροχές Καταλύματος', 'Facilities', 'Κήπος, πάρκινγκ & ανέσεις', 'Garden, parking & amenities', 'Waves', 4, '/images/categories/facilities.jpg'),
-  ('dining', 'Πρωινό & Εστίαση', 'Breakfast & Dining', 'Προτάσεις για φαγητό & καφέ', 'Dining & breakfast recommendations', 'Utensils', 5, '/images/categories/dining.jpg'),
+  ('dining', 'Πρωινό & Φαγητό', 'Breakfast & Dining', 'Προτάσεις για φαγητό & καφέ', 'Dining & breakfast recommendations', 'Utensils', 5, '/images/categories/dining.jpg'),
   ('housekeeping', 'Καθαριότητα & Εξυπηρέτηση', 'Housekeeping & Services', 'Πρόγραμμα καθαριότητας & πετσέτες', 'Cleaning schedule & linens', 'Sparkles', 6, '/images/categories/housekeeping.jpg'),
   ('discover_paros', 'Γνωρίστε την Πάρο', 'Discover Paros', 'Παραλίες, γραφικά χωριά & αξιοθέατα', 'Beaches, scenic villages & sights', 'Anchor', 7, '/images/categories/paros.jpg'),
   ('useful_info', 'Χρήσιμες Πληροφορίες', 'Useful Information', 'Φαρμακεία, λεωφορεία & ενοικιάσεις', 'Pharmacies, buses & rentals', 'Info', 8, '/images/categories/info.jpg'),
