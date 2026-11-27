@@ -85,87 +85,81 @@ export const AssistanceFooter: React.FC<AssistanceFooterProps> = () => {
     <footer className="w-full mt-20 sm:mt-24">
       <div className="max-w-4xl mx-auto px-4 pb-12 space-y-8">
         {/* ============================================================== */}
-        {/* 3. TWO EQUAL-SIZED REVIEW CARDS: TRIPADVISOR & GOOGLE REVIEWS */}
+        {/* 3. COMPACT REVIEW CARDS: TRIPADVISOR & GOOGLE REVIEWS */}
         {/* ============================================================== */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-2.5">
           {/* Card A: TripAdvisor Review */}
-          <div className="relative overflow-hidden p-5 sm:p-6 rounded-2xl bg-white border border-[#e8dff0] shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-xl bg-[#24123a] text-emerald-400 flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
-                  <TripAdvisorLogo className="w-7 h-7 text-emerald-400" />
-                </div>
-                <div className="flex items-center gap-0.5 text-amber-500">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-500" />
-                  ))}
-                </div>
+          <div className="flex items-center justify-between gap-3 p-3 sm:p-3.5 rounded-xl bg-white border border-[#e8dff0] shadow-xs hover:shadow-sm transition-all">
+            <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#24123a] text-emerald-400 flex items-center justify-center shrink-0">
+                <TripAdvisorLogo className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" />
               </div>
-
-              <div>
-                <span className="text-[10px] font-sans font-medium tracking-wider uppercase text-emerald-800 block">
-                  TRIPADVISOR REVIEW
-                </span>
-                <h3 className="font-pathos font-bold text-lg sm:text-xl text-[#24123a] tracking-tight leading-snug">
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[9px] font-sans font-medium tracking-wider uppercase text-[#24123a]/60">
+                    TRIPADVISOR REVIEW
+                  </span>
+                  <div className="flex items-center gap-0.5 text-[#24123a]/70">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-2.5 h-2.5 fill-[#24123a]/70 text-[#24123a]/70" />
+                    ))}
+                  </div>
+                </div>
+                <h3 className="font-pathos font-bold text-xs sm:text-sm text-[#24123a] tracking-tight leading-tight truncate">
                   {t.tripadvisorTitle}
                 </h3>
-                <p className="text-xs text-slate-600 font-sans font-light mt-0.5">
+                <p className="text-[10px] sm:text-xs text-[#24123a]/70 font-sans font-light leading-tight truncate">
                   {t.tripadvisorSub}
                 </p>
               </div>
             </div>
 
-            <div className="pt-4">
-              <a
-                href={tripadvisorUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full gap-2 px-5 py-2.5 rounded-xl bg-[#00aa6c] hover:bg-[#008f5a] text-white text-xs font-pathos font-bold uppercase tracking-[0.16em] transition-all shadow-sm active:scale-95"
-              >
-                <span>{t.tripadvisorAction}</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            </div>
+            <a
+              href={tripadvisorUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#24123a] hover:bg-[#381c5a] text-white text-[10px] font-pathos font-bold uppercase tracking-wider transition-all shrink-0 active:scale-95"
+            >
+              <span>{t.tripadvisorAction}</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
           </div>
 
-          {/* Card B: Google Reviews (Equal-sized) */}
-          <div className="relative overflow-hidden p-5 sm:p-6 rounded-2xl bg-white border border-[#e8dff0] shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-xl bg-[#faf6fb] border border-slate-200 flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
-                  <GoogleLogo className="w-6 h-6" />
-                </div>
-                <div className="flex items-center gap-0.5 text-amber-500">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-500" />
-                  ))}
-                </div>
+          {/* Card B: Google Reviews */}
+          <div className="flex items-center justify-between gap-3 p-3 sm:p-3.5 rounded-xl bg-white border border-[#e8dff0] shadow-xs hover:shadow-sm transition-all">
+            <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#faf6fb] border border-[#e8dff0] flex items-center justify-center shrink-0">
+                <GoogleLogo className="w-5 h-5" />
               </div>
-
-              <div>
-                <span className="text-[10px] font-sans font-medium tracking-wider uppercase text-blue-800 block">
-                  GOOGLE REVIEWS
-                </span>
-                <h3 className="font-pathos font-bold text-lg sm:text-xl text-[#24123a] tracking-tight leading-snug">
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[9px] font-sans font-medium tracking-wider uppercase text-[#24123a]/60">
+                    GOOGLE REVIEWS
+                  </span>
+                  <div className="flex items-center gap-0.5 text-[#24123a]/70">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-2.5 h-2.5 fill-[#24123a]/70 text-[#24123a]/70" />
+                    ))}
+                  </div>
+                </div>
+                <h3 className="font-pathos font-bold text-xs sm:text-sm text-[#24123a] tracking-tight leading-tight truncate">
                   {t.googleReviewsTitle}
                 </h3>
-                <p className="text-xs text-slate-600 font-sans font-light mt-0.5">
+                <p className="text-[10px] sm:text-xs text-[#24123a]/70 font-sans font-light leading-tight truncate">
                   {t.googleReviewsSub}
                 </p>
               </div>
             </div>
 
-            <div className="pt-4">
-              <a
-                href={googleReviewsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-full gap-2 px-5 py-2.5 rounded-xl bg-[#24123a] hover:bg-[#381c5a] text-white text-xs font-pathos font-bold uppercase tracking-[0.16em] transition-all shadow-sm active:scale-95"
-              >
-                <span>{t.googleReviewsAction}</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            </div>
+            <a
+              href={googleReviewsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#24123a] hover:bg-[#381c5a] text-white text-[10px] font-pathos font-bold uppercase tracking-wider transition-all shrink-0 active:scale-95"
+            >
+              <span>{t.googleReviewsAction}</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
           </div>
         </div>
 
