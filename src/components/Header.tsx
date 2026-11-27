@@ -65,6 +65,11 @@ export const Header: React.FC = () => {
 
         {/* Bottom Tapered Hairline (same size, tapers like a hair at the ends) */}
         <div className="w-[80vw] max-w-sm sm:max-w-md md:max-w-xl h-[1.5px] bg-gradient-to-r from-transparent via-[#dfc285] to-transparent mt-4 sm:mt-6 shadow-sm" />
+
+        {/* Subtle Gold Welcome Line */}
+        <p className="mt-3 sm:mt-4 text-[11px] sm:text-xs font-sans font-light tracking-[0.35em] uppercase text-[#dfc285] drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
+          {language === 'el' ? 'Καλώς Ήρθατε' : 'Welcome'}
+        </p>
       </div>
 
       {/* Bottom Dividing Hairline */}
