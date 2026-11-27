@@ -88,79 +88,51 @@ export const AssistanceFooter: React.FC<AssistanceFooterProps> = () => {
         {/* 3. COMPACT REVIEW CARDS: TRIPADVISOR & GOOGLE REVIEWS */}
         {/* ============================================================== */}
         <div className="grid grid-cols-1 gap-2.5">
-          {/* Card A: TripAdvisor Review */}
-          <div className="flex items-center justify-between gap-3 p-3 sm:p-3.5 rounded-xl bg-white border border-[#e8dff0] shadow-xs hover:shadow-sm transition-all">
-            <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#24123a] text-emerald-400 flex items-center justify-center shrink-0">
-                <TripAdvisorLogo className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[9px] font-sans font-medium tracking-wider uppercase text-[#24123a]/60">
-                    TRIPADVISOR REVIEW
-                  </span>
-                  <div className="flex items-center gap-0.5 text-[#24123a]/70">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-2.5 h-2.5 fill-[#24123a]/70 text-[#24123a]/70" />
-                    ))}
-                  </div>
-                </div>
-                <h3 className="font-pathos font-bold text-xs sm:text-sm text-[#24123a] tracking-tight leading-tight truncate">
-                  {t.tripadvisorTitle}
-                </h3>
-                <p className="text-[10px] sm:text-xs text-[#24123a]/70 font-sans font-light leading-tight truncate">
-                  {t.tripadvisorSub}
-                </p>
-              </div>
+          {/* Card A: TripAdvisor Review (Whole card clickable, no stars, no button, lowercase/normal case) */}
+          <a
+            href={tripadvisorUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 p-3 sm:p-3.5 rounded-xl bg-white hover:bg-[#faf6fb] border border-[#e8dff0] hover:border-[#24123a] shadow-xs hover:shadow-sm transition-all group"
+          >
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#24123a] text-emerald-400 flex items-center justify-center shrink-0">
+              <TripAdvisorLogo className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" />
             </div>
-
-            <a
-              href={tripadvisorUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#24123a] hover:bg-[#381c5a] text-white text-[10px] font-pathos font-bold uppercase tracking-wider transition-all shrink-0 active:scale-95"
-            >
-              <span>{t.tripadvisorAction}</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
-          </div>
-
-          {/* Card B: Google Reviews */}
-          <div className="flex items-center justify-between gap-3 p-3 sm:p-3.5 rounded-xl bg-white border border-[#e8dff0] shadow-xs hover:shadow-sm transition-all">
-            <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#faf6fb] border border-[#e8dff0] flex items-center justify-center shrink-0">
-                <GoogleLogo className="w-5 h-5" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[9px] font-sans font-medium tracking-wider uppercase text-[#24123a]/60">
-                    GOOGLE REVIEWS
-                  </span>
-                  <div className="flex items-center gap-0.5 text-[#24123a]/70">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-2.5 h-2.5 fill-[#24123a]/70 text-[#24123a]/70" />
-                    ))}
-                  </div>
-                </div>
-                <h3 className="font-pathos font-bold text-xs sm:text-sm text-[#24123a] tracking-tight leading-tight truncate">
-                  {t.googleReviewsTitle}
-                </h3>
-                <p className="text-[10px] sm:text-xs text-[#24123a]/70 font-sans font-light leading-tight truncate">
-                  {t.googleReviewsSub}
-                </p>
-              </div>
+            <div className="min-w-0 flex-1">
+              <span className="text-[9px] font-sans font-medium tracking-wider uppercase text-[#24123a]/60 block">
+                TripAdvisor
+              </span>
+              <p className="font-sans font-semibold text-xs sm:text-sm text-[#24123a] leading-snug">
+                {t.tripadvisorTitle}
+              </p>
+              <p className="text-[11px] sm:text-xs text-[#24123a]/70 font-sans font-normal leading-snug">
+                {t.tripadvisorSub}
+              </p>
             </div>
+          </a>
 
-            <a
-              href={googleReviewsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#24123a] hover:bg-[#381c5a] text-white text-[10px] font-pathos font-bold uppercase tracking-wider transition-all shrink-0 active:scale-95"
-            >
-              <span>{t.googleReviewsAction}</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
-          </div>
+          {/* Card B: Google Reviews (Whole card clickable, no stars, no button, lowercase/normal case) */}
+          <a
+            href={googleReviewsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 p-3 sm:p-3.5 rounded-xl bg-white hover:bg-[#faf6fb] border border-[#e8dff0] hover:border-[#24123a] shadow-xs hover:shadow-sm transition-all group"
+          >
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#faf6fb] border border-[#e8dff0] flex items-center justify-center shrink-0">
+              <GoogleLogo className="w-5 h-5" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <span className="text-[9px] font-sans font-medium tracking-wider uppercase text-[#24123a]/60 block">
+                Google Reviews
+              </span>
+              <p className="font-sans font-semibold text-xs sm:text-sm text-[#24123a] leading-snug">
+                {t.googleReviewsTitle}
+              </p>
+              <p className="text-[11px] sm:text-xs text-[#24123a]/70 font-sans font-normal leading-snug">
+                {t.googleReviewsSub}
+              </p>
+            </div>
+          </a>
         </div>
 
         {/* ============================================================== */}
@@ -194,7 +166,7 @@ export const AssistanceFooter: React.FC<AssistanceFooterProps> = () => {
                 <span className="text-[9px] font-sans font-medium text-[#24123a]/60 uppercase tracking-wider block truncate">
                   {t.landlineLabel}
                 </span>
-                <span className="text-[11px] sm:text-xs font-pathos font-bold text-[#24123a] truncate block">
+                <span className="text-[10px] sm:text-xs font-sans font-semibold text-[#24123a] block leading-tight break-all">
                   +30 22840 41015
                 </span>
               </div>
@@ -212,7 +184,7 @@ export const AssistanceFooter: React.FC<AssistanceFooterProps> = () => {
                 <span className="text-[9px] font-sans font-medium text-[#24123a]/60 uppercase tracking-wider block truncate">
                   {t.mobileLabel}
                 </span>
-                <span className="text-[10px] sm:text-xs font-pathos font-bold text-[#24123a] block leading-tight">
+                <span className="text-[10px] sm:text-xs font-sans font-semibold text-[#24123a] block leading-tight">
                   6942 422511 · 6942 402355
                 </span>
               </div>
@@ -232,7 +204,7 @@ export const AssistanceFooter: React.FC<AssistanceFooterProps> = () => {
                 <span className="text-[9px] font-sans font-medium text-[#24123a]/60 uppercase tracking-wider block truncate">
                   WhatsApp
                 </span>
-                <span className="text-[11px] sm:text-xs font-pathos font-bold text-[#24123a] truncate block">
+                <span className="text-[10px] sm:text-xs font-sans font-semibold text-[#24123a] block leading-tight break-all">
                   +30 6942 422511
                 </span>
               </div>
@@ -252,7 +224,7 @@ export const AssistanceFooter: React.FC<AssistanceFooterProps> = () => {
                 <span className="text-[9px] font-sans font-medium text-[#24123a]/60 uppercase tracking-wider block truncate">
                   Viber
                 </span>
-                <span className="text-[11px] sm:text-xs font-pathos font-bold text-[#24123a] truncate block">
+                <span className="text-[10px] sm:text-xs font-sans font-semibold text-[#24123a] block leading-tight break-all">
                   +30 6942 422511
                 </span>
               </div>
@@ -270,7 +242,7 @@ export const AssistanceFooter: React.FC<AssistanceFooterProps> = () => {
                 <span className="text-[9px] font-sans font-medium text-[#24123a]/60 uppercase tracking-wider block truncate">
                   Email
                 </span>
-                <span className="text-[10px] sm:text-xs font-pathos font-bold text-[#24123a] truncate block">
+                <span className="text-[10px] sm:text-xs font-sans font-semibold text-[#24123a] block leading-tight break-all">
                   anna@efistudios.gr
                 </span>
               </div>
@@ -290,7 +262,7 @@ export const AssistanceFooter: React.FC<AssistanceFooterProps> = () => {
                 <span className="text-[9px] font-sans font-medium text-[#24123a]/60 uppercase tracking-wider block truncate">
                   Website
                 </span>
-                <span className="text-[10px] sm:text-xs font-pathos font-bold text-[#24123a] truncate block">
+                <span className="text-[10px] sm:text-xs font-sans font-semibold text-[#24123a] block leading-tight break-all">
                   efistudios.gr
                 </span>
               </div>
@@ -310,7 +282,7 @@ export const AssistanceFooter: React.FC<AssistanceFooterProps> = () => {
                 <span className="text-[9px] font-sans font-medium text-[#24123a]/60 uppercase tracking-wider block">
                   {t.locationLabel}
                 </span>
-                <span className="text-xs sm:text-sm font-pathos font-bold text-[#24123a] truncate block">
+                <span className="text-xs sm:text-sm font-sans font-semibold text-[#24123a] block leading-tight">
                   {language === 'el' ? 'Δρυός, Πάρος 84400' : 'Drios, Paros 84400'}
                 </span>
               </div>
